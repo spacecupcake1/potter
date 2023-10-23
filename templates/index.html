@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <style>
+        body{
+            background-image: url('/static/img/hp.avif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-size: 32px;
+        }
+        .sml {
+            width: 30px;
+            height: 27px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Store</h1>
+    <p> We have this following offer for the first Harry Potter books:</p>
+    <p>One copy of any of the five books costs 8 EUR. If, however, you buy two different books from the series, you get a 5% discount on those two books. If you buy 3 different books, you get a 10% discount. With 4 different books, you get a 20% discount. If you go the whole hog, and buy all 5, you get a huge 25% discount.
+
+        Note that if you buy, say, four books, of which 3 are different titles, you get a 10% discount on the 3 that form part of a set, but the fourth book still costs 8 EUR.</p>
+    <p>Here you can calculate how much it would cost to buy these books:</p>
+    <form action="/calculate" method="post">
+        Harry Potter and the Sorcerer's Stone: <input class= "sml" type="number" name="book1" min="0"><br>
+        Harry Potter and the Chamber of Secrets: <input class= "sml" type="number" name="book2" min="0"><br>
+        Harry Potter and the Prisoner of Azkaban: <input class= "sml" type="number" name="book3" min="0"><br>
+        Harry Potter and the Goblet of Fire: <input class= "sml" type="number" name="book4" min="0"><br>
+        Harry Potter and the Order of the Phoenix: <input class= "sml" type="number" name="book5" min="0"><br>
+        <input type="submit" value="Calculate Price">
+    </form>
+
+    {% if result %}
+        <h2>Result:</h2>
+        <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
